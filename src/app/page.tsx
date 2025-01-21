@@ -39,6 +39,8 @@ const AgentChat = () => {
 
       if (response.ok) {
         // Add intermediate updates
+        console.log('data.update', data.updates);
+        console.log('result', data.result);
         data.updates.forEach((update: { type: string; content: string }) => {
           setMessages((prev) => [
             ...prev,
