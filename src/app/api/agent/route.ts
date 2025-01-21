@@ -1,10 +1,10 @@
 // app/api/agent/route.ts
 import { BeeAgent } from "bee-agent-framework/agents/bee/agent";
-import { TokenMemory } from "bee-agent-framework/memory/tokenMemory";
-import { DuckDuckGoSearchTool } from "bee-agent-framework/tools/search/duckDuckGoSearch";
-import { OpenMeteoTool } from "bee-agent-framework/tools/weather/openMeteo";
+import { GoogleSearchTool } from "bee-agent-framework/tools/search/googleSearch";
 import { GroqChatLLM } from "bee-agent-framework/adapters/groq/chat";
 import { NextResponse } from "next/server";
+import { OpenMeteoTool } from "bee-agent-framework/tools/weather/openMeteo";
+import { TokenMemory } from "bee-agent-framework/memory/tokenMemory";
 
 // Initialize agent
 const llm = new GroqChatLLM({
@@ -14,7 +14,7 @@ const llm = new GroqChatLLM({
 const agent = new BeeAgent({
   llm,
   memory: new TokenMemory({ llm }),
-  tools: [new DuckDuckGoSearchTool(), new OpenMeteoTool()],
+  tools: [new GoogleSearchTool(), new OpenMeteoTool()],
 });
 
 export async function POST(request: Request) {

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { Send } from "lucide-react";
+import { useState } from "react";
 
 // Add interface for message structure
 interface Message {
