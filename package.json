@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,7 +12,10 @@
     "bee-agent-framework": "^0.0.42",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "groq-sdk": "^0.7.0",
+    "http-proxy-middleware": "^3.0.3",
     "lucide-react": "^0.460.0",
     "next": "15.0.0",
     "react": "19.0.0-rc-65a56d0e-20241020",
