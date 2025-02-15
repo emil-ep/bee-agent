@@ -1,0 +1,59 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "Crawl Service API",
+      "version": "1.0.0",
+      "description": "An API to crawl web pages and return data."
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000",
+        "description": "Local development server"
+      }
+    ],
+    "paths": {
+      "/crawl": {
+        "get": {
+          "summary": "Crawl a web page",
+          "description": "Fetches and processes a web page's content from the given URL.",
+          "parameters": [
+            {
+              "name": "url",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uri"
+              },
+              "description": "The URL of the web page to crawl."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "string",
+                        "description": "The crawled web page content."
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad request - Invalid or missing URL"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    }
+  }
+  
